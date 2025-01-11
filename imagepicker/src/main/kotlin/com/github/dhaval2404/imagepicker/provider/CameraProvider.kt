@@ -117,6 +117,7 @@ class CameraProvider(activity: ImagePickerActivity) : BaseProvider(activity) {
      * Create Temporary File object and Pass it to Camera Intent
      */
     private fun startCameraIntent() {
+        activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LOCKED
         // Create and get empty file to store capture image content
         val file = FileUtil.getImageFile(fileDir = mFileDir)
         mCameraFile = file
